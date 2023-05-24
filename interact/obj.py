@@ -18,7 +18,7 @@ def load_obj(bc, position, orientation, object_type, object_id, scale=1, **kwarg
 
     # TODO: replace all urdf_path with yours
     if object_type == 'Switch':
-        urdf_path = os.path.join('/proj/crv/zeyi/busybot/assets/objects', object_type, object_id, 'mobility.urdf')
+        urdf_path = os.path.join('./assets/objects', object_type, object_id, 'mobility.urdf')
 
         obj_id = bc.loadURDF(
             fileName=urdf_path,
@@ -30,7 +30,7 @@ def load_obj(bc, position, orientation, object_type, object_id, scale=1, **kwarg
         )
 
     elif object_type == 'Door':
-        urdf_path = os.path.join('/proj/crv/zeyi/busybot/assets/objects', object_type, object_id, 'mobility.urdf')
+        urdf_path = os.path.join('./assets/objects', object_type, object_id, 'mobility.urdf')
 
         obj_id = bc.loadURDF(
             fileName=urdf_path,
@@ -46,7 +46,7 @@ def load_obj(bc, position, orientation, object_type, object_id, scale=1, **kwarg
         # bc.changeVisualShape(obj_id, 1, rgbaColor=random_color)
 
     elif object_type == 'Lamp':
-        urdf_path = os.path.join('/proj/crv/zeyi/busybot/assets/objects', object_type, object_id, 'mobility.urdf')
+        urdf_path = os.path.join('./assets/objects', object_type, object_id, 'mobility.urdf')
 
         obj_id = bc.loadURDF(
             fileName=urdf_path,
@@ -63,7 +63,7 @@ def load_obj(bc, position, orientation, object_type, object_id, scale=1, **kwarg
             bc.changeVisualShape(obj_id, 1, rgbaColor=[0, 0, 0, 1])
 
     elif object_type == 'Toy':
-        urdf_path = os.path.join('/proj/crv/zeyi/busybot/assets/objects', object_type, object_id, 'mobility.urdf')
+        urdf_path = os.path.join('./assets/objects', object_type, object_id, 'mobility.urdf')
 
         obj_id = bc.loadURDF(
             fileName=urdf_path,
