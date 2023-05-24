@@ -13,7 +13,7 @@ import pybullet_utils.bullet_client as bc
 class Board(object):
     def __init__(self, bc, board_length, board_width, texture_file, board_color):
         self.bc = bc
-        self.object_dataset = json.load(open(os.path.join("/proj/crv/zeyi/busybot/assets/objects", 'data.json')))
+        self.object_dataset = json.load(open(os.path.join("./assets/objects", 'data.json')))
         board_pos = [0, 0, -0.01 * (board_length-1)]
         self.board_id = self.bc.loadURDF("/proj/crv/zeyi/busybot/assets/board/table.urdf",
                                           basePosition=board_pos,
@@ -21,7 +21,7 @@ class Board(object):
                                           useFixedBase=True,
                                           globalScaling=board_length)
 
-        texUid = self.bc.loadTexture(os.path.join('/proj/crv/zeyi/busybot/assets/board', texture_file))
+        texUid = self.bc.loadTexture(os.path.join('./assets/board', texture_file))
         self.bc.changeVisualShape(self.board_id, -1, textureUniqueId=texUid, rgbaColor=board_color)
 
         self.board_length = board_length
