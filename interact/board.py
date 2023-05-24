@@ -15,7 +15,7 @@ class Board(object):
         self.bc = bc
         self.object_dataset = json.load(open(os.path.join("./assets/objects", 'data.json')))
         board_pos = [0, 0, -0.01 * (board_length-1)]
-        self.board_id = self.bc.loadURDF("/proj/crv/zeyi/busybot/assets/board/table.urdf",
+        self.board_id = self.bc.loadURDF("./assets/board/table.urdf",
                                           basePosition=board_pos,
                                           baseOrientation=transformations.quaternion_from_euler(0, 0, 0),
                                           useFixedBase=True,
@@ -107,7 +107,7 @@ class Board(object):
         object_ids, object_types = zip(*temp)
 
         for i, object_id in enumerate(object_ids):
-            obj_json_path = os.path.join("/proj/crv/zeyi/busybot/assets/objects", object_types[i], object_id, 'object_meta_info.json')
+            obj_json_path = os.path.join("./assets/objects", object_types[i], object_id, 'object_meta_info.json')
             obj_json = json.load(open(obj_json_path))
             obj_ori = self.get_obj_orientation(obj_json)
             euler = transformations.euler_from_quaternion(obj_ori)
